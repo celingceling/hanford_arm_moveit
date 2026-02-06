@@ -1,6 +1,8 @@
 # Hanford MoveIt 2 (MoveItCpp demo + MoveIt config + Isaac Sim USD)
 
-![Hanford MoveItCpp planning demo](media/moveit_short.gif)
+<p align="center">
+  <img src="./media/moveit_short.gif?raw=true" alt="Hanford MoveItCpp planning demo" width="900" />
+</p>
 
 This repository is intentionally minimal and contains:
 

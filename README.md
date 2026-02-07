@@ -71,12 +71,9 @@ source install/setup.bash
 ls $(ros2 pkg prefix --share hanford_arm_moveit_config)/launch
 ```
 
-Launch one (replace with the actual filename in your package):
 
 ```bash
 ros2 launch hanford_arm_moveit_config demo.launch.py
-# or
-ros2 launch hanford_arm_moveit_config move_group.launch.py
 ```
 
 ### Run the MoveItCpp demo node
@@ -87,7 +84,7 @@ List executables:
 ros2 pkg executables hanford_moveit_cpp_demo
 ```
 
-Run one (replace `<executable>`):
+Run:
 
 ```bash
 ros2 run hanford_moveit_cpp_demo <executable>
@@ -95,42 +92,6 @@ ros2 run hanford_moveit_cpp_demo <executable>
 
 ---
 
-## Isaac Sim USD scenes
-
-### Where to put the USD
-Put your main stage(s) in:
-
-- `usd/scenes/<stage>.usd` (ASCII / text)
-- or `usd/scenes/<stage>.usdc` (binary)
-
-If the stage uses **custom** meshes/textures, place them under `usd/assets/` and reference them via **relative paths**.
-
-### Make the USD portable (important)
-USD files often reference assets by absolute paths, Nucleus URLs, or local caches. To make the scene portable across machines, use Isaac Sim’s **Collect Asset** workflow and then ensure references are relative inside the collected folder.
-
-**Licensing note:** Avoid committing Isaac Sim stock assets unless redistribution is explicitly allowed. A safe pattern is:
-- commit only your custom USD + your custom assets
-- document that users must install Isaac Sim and its asset packs locally
-
-### Opening in Isaac Sim
-Open the stage from `usd/scenes/`. If materials/meshes are missing, it’s usually a path issue:
-re-run “Collect Asset” or fix references to be relative.
-
----
-
-## Large files (Git LFS)
-
-If you store binary USDs or large textures/meshes, Git LFS is recommended:
-
-```bash
-sudo apt install git-lfs
-git lfs install
-git lfs track "*.usdc" "*.usdz" "*.png" "*.jpg" "*.jpeg" "*.exr" "*.tif" "*.tiff" "*.obj" "*.stl" "*.fbx"
-git add .gitattributes
-git commit -m "Track large USD/asset files with Git LFS"
-```
-
----
 
 ## Troubleshooting
 

@@ -3,7 +3,7 @@
     <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
 
     <!-- Import pit_robot_robotonly urdf file -->
-    <xacro:include filename="$(find new_link_arm_full)/urdf/pit_robot_robotonly.urdf" />
+    <xacro:include filename="/home/celing/hanford_wire_manipulator_with_camera_description/urdf/robot_pit_end_effector.urdf" />
 
     <!-- Import control_xacro -->
     <xacro:include filename="pit_robot_robotonly.ros2_control.xacro" />

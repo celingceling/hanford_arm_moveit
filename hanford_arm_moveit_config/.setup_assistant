@@ -1,7 +1,7 @@
 moveit_setup_assistant_config:
   urdf:
-    package: new_link_arm_full
-    relative_path: urdf/pit_robot_robotonly.urdf
+    package: hanford_wire_manipulator_with_camera_description
+    relative_path: urdf/robot_pit_end_effector.urdf
   srdf:
     relative_path: config/pit_robot_robotonly.srdf
   package_settings:
